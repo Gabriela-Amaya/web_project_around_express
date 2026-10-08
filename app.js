@@ -7,11 +7,11 @@ const app = express();
 const PORT = 3000;
 
 app.use('/users', usersRouter);
-app.use('/cards', cardsRouter);
+app.use('/card', cardsRouter);
 
 app.use((req, res) => {
   res.status(404).json({
-    message: 'Recurso solicitado no encontrado',
+    message: 'Requested resource not found',
   });
 });
 

@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
   fs.readFile(cardsPath, 'utf8', (err, data) => {
     if (err) {
       res.status(500).json({
-        message: 'Error al leer las tarjetas',
+        message: 'An error has occurred on the server',
       });
       return;
     }
@@ -20,7 +20,7 @@ router.get('/', (req, res) => {
       res.json(cards);
     } catch (error) {
       res.status(500).json({
-        message: 'Error al procesar las tarjetas',
+        message: 'An error has occurred on the server',
       });
     }
   });

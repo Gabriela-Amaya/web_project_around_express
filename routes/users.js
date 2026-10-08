@@ -32,7 +32,7 @@ router.get('/:id', (req, res) => {
   fs.readFile(usersPath, 'utf8', (err, data) => {
     if (err) {
       res.status(500).json({
-        message: 'Error al leer los usuarios',
+        message: 'An error has occurred on the server',
       });
       return;
     }
@@ -43,7 +43,7 @@ router.get('/:id', (req, res) => {
 
       if (!user) {
         res.status(404).json({
-          message: 'ID de usuario no encontrado',
+          message: 'User ID not found',
         });
         return;
       }
@@ -51,7 +51,7 @@ router.get('/:id', (req, res) => {
       res.json(user);
     } catch (error) {
       res.status(500).json({
-        message: 'Error al procesar los usuarios',
+        message: 'An error has occurred on the server',
       });
     }
   });
